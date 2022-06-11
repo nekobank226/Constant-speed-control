@@ -66,7 +66,7 @@ def motor_angle(power_ratio: int):
         pi.write(14, 0)
         pi.write(15, 1)
     print("回転開始")
-
+    print("回転を終了するときはctr+cを押してください")
     try:
         while True:
             speed_target = int(power_ratio * 4095 / 100)
@@ -87,5 +87,5 @@ def stop():
     PCA9685.set_pwm(0, 0, 0)
 
 if __name__ == "__main__":
-    motor_angle(20)
+    motor_angle(13)
     stop()
